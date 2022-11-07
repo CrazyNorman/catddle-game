@@ -1,0 +1,23 @@
+{
+  "id": "2053028",
+  "name": "apple",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "928927",
+      "name": "android",
+      "font_class": "android",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "1441599",
+      "name": "apple",
+      "font_class": "apple",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    }
+  ]
+}
