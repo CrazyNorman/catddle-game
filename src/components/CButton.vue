@@ -32,6 +32,7 @@ const h = computed(() => props.height + 'px')
 	border-radius: 20px;
 	box-sizing: border-box;
 	margin-right: 25px;
+	font-family: 'Chalkboard';
 }
 
 .c-button-container {

@@ -1,9 +1,5 @@
 import Home from '@/views/home/index.vue'
-import About from 'components/About.vue'
 
-const routes = [
-	{ path: '/', component: Home },
-	{ path: '/about', component: About }
-]
+const routes = [{ path: '/', component: Home }]
 
 export default routes

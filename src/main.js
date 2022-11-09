@@ -5,5 +5,8 @@ import 'normalize.css'
 import 'flex.css'
 import '@/assets/iconfont/iconfont.css'
 import '@/assets/iconfont/iconfont.js'
+import installGlobalComp from './components'
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App)
+installGlobalComp(app)
+app.use(router).mount('#app')

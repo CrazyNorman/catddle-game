@@ -7,7 +7,7 @@ import CButton from 'components/CButton.vue'
 		<header class="nav-bar" flex="dir:right">
 			<c-button :width="101">...</c-button>
 			<c-button :width="231">WALLET</c-button>
-			<c-button :width="231" @click="btnClick">WALLET</c-button>
+			<c-button :width="231">WALLET</c-button>
 		</header>
 		<main class="content">
 			<div flex="dir:left main:center cross:bottom">
