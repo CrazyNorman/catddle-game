@@ -11,16 +11,16 @@ import { computed } from 'vue'
 const props = defineProps({
 	width: {
 		type: Number,
-		default: 200
+		default: 3
 	},
 	height: {
 		type: Number,
-		default: 33
+		default: 3
 	}
 })
 
-const w = computed(() => props.width + 'px')
-const h = computed(() => props.height + 'px')
+const w = computed(() => props.width + 'em')
+const h = computed(() => props.height + 'em')
 </script>
 
 <style scoped>

@@ -5,9 +5,3 @@
 		<router-view></router-view>
 	</div>
 </template>
-
-<style scoped>
-.app {
-	min-width: 1080px;
-}
-</style>

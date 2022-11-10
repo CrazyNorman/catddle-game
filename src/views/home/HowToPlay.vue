@@ -17,14 +17,13 @@
 				<img src="~@/assets/images/game1.png" alt="" />
 			</swiper-slide>
 		</swiper>
-		<c-button :width="600" :height="80"> How to play </c-button>
+		<c-button :width="12" :height="2"> How to play </c-button>
 	</div>
 </template>
 
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay } from 'swiper'
-import 'swiper/css'
 import { ref } from 'vue'
 
 const modules = ref([Autoplay])
@@ -60,6 +59,10 @@ const modules = ref([Autoplay])
 	margin: 45px 0 69px;
 }
 
+.swiper-slide img {
+	width: auto;
+	height: 100%;
+}
 .c-button {
 	font-size: 35px;
 	margin: 0 auto;

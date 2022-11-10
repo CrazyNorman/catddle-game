@@ -1,9 +1,9 @@
 <template>
 	<div class="download-page">
 		<header class="nav-bar" flex="dir:right">
-			<c-button :width="101">...</c-button>
-			<c-button :width="231">WALLET</c-button>
-			<c-button :width="231">WALLET</c-button>
+			<c-button :width="8">...</c-button>
+			<c-button :width="15">WALLET</c-button>
+			<c-button :width="15">WALLET</c-button>
 		</header>
 		<main class="content">
 			<div flex="dir:left main:center cross:bottom">
@@ -16,10 +16,10 @@
 			</div>
 			<p class="description">Description: balabalabalabalabalabala</p>
 			<div class="download-btn" flex="dir:left main:center">
-				<c-button :width="250" :height="56">
+				<c-button :width="8" :height="2">
 					<span><i class="iconfont icon-apple"></i>IOS</span>
 				</c-button>
-				<c-button :width="250" :height="56">
+				<c-button :width="8" :height="2">
 					<span><i class="iconfont icon-android"></i>Android</span>
 				</c-button>
 			</div>
