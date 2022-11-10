@@ -31,7 +31,6 @@ const h = computed(() => props.height + 'px')
 	border: 6px solid #431e13;
 	border-radius: 20px;
 	box-sizing: border-box;
-	margin-right: 25px;
 	font-family: 'Chalkboard';
 }
 

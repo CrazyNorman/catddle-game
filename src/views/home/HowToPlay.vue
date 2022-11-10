@@ -59,9 +59,7 @@ const modules = ref([Autoplay])
 	height: 456px;
 	margin: 45px 0 69px;
 }
-.swiper-slide {
-	/* width: 250px !important; */
-}
+
 .c-button {
 	font-size: 35px;
 	margin: 0 auto;

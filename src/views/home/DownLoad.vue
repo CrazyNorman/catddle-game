@@ -39,6 +39,9 @@
 	padding: 25px 38px;
 }
 
+.c-button {
+	margin-right: 25px;
+}
 .content {
 	padding-top: 240px;
 }
