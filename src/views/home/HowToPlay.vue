@@ -4,8 +4,9 @@
 		<div class="description-second">Description: balabalabalabalabalabala</div>
 		<swiper
 			:loop="true"
+			:speed="2500"
 			:autoplay="{
-				delay: 2500,
+				delay: 1500,
 				disableOnInteraction: false
 			}"
 			:slidesPerView="5"

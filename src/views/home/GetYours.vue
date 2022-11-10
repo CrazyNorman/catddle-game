@@ -9,7 +9,7 @@
 	height: 1117px;
 	font-family: 'Chalkboard';
 	font-weight: 700;
-	background: url('~@/assets/images/part3.png') no-repeat;
+	background: url('~@/assets/images/part3.png') center no-repeat;
 	background-size: cover;
 }
 </style>
