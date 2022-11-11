@@ -23,7 +23,7 @@ const w = computed(() => props.width + 'em')
 const h = computed(() => props.height + 'em')
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .c-button {
 	width: v-bind(w);
 	cursor: pointer;
@@ -31,7 +31,7 @@ const h = computed(() => props.height + 'em')
 	border: 6px solid #431e13;
 	border-radius: 20px;
 	box-sizing: border-box;
-	font-family: 'Chalkboard';
+	font-family: $font-family;
 }
 
 .c-button-container {
