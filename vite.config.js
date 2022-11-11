@@ -1,4 +1,4 @@
-import { resolve } from 'path'
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import postcssImport from 'postcss-import'
@@ -13,6 +13,11 @@ const load_pxtovw = pxtovw({
 export default defineConfig({
 	plugins: [vue()],
 	css: {
+		preprocessorOptions: {
+			scss: {
+				additionalData: '@import "@/assets/scss/var.scss";'
+			}
+		},
 		postcss: {
 			plugins: [
 				postcssImport(),
@@ -34,9 +39,9 @@ export default defineConfig({
 	},
 	resolve: {
 		alias: {
-			'@': resolve('./src'),
-			'~@': resolve('./src'),
-			components: resolve('./src/components')
+			'@': fileURLToPath(new URL('./src', import.meta.url)),
+			'~@': fileURLToPath(new URL('./src', import.meta.url)),
+			components: fileURLToPath(new URL('./src/components', import.meta.url))
 		}
 	}
 })
