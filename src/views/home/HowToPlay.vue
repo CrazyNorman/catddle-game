@@ -1,32 +1,33 @@
 <template>
 	<div class="how-play">
-		<div class="description">Description: balabalabalabalabalabala</div>
-		<div class="description-second">Description: balabalabalabalabalabala</div>
+		<div class="c-title-h1">Description: balabalabalabalabalabala</div>
+		<div class="c-title-h2">Description: balabalabalabalabalabala</div>
 		<swiper
 			:loop="true"
-			:speed="2500"
+			:speed="3000"
+			:freeMode="true"
 			:autoplay="{
-				delay: 1500,
+				delay: 1000,
 				disableOnInteraction: false
 			}"
-			:slidesPerView="5"
-			:spaceBetween="43"
+			:slidesPerView="6"
+			:spaceBetween="2"
 			:modules="modules"
 		>
-			<swiper-slide v-for="i in 5">
+			<swiper-slide v-for="i in 8">
 				<img src="~@/assets/images/game1.png" alt="" />
 			</swiper-slide>
 		</swiper>
-		<c-button :width="12" :height="2"> How to play </c-button>
+		<c-button :width="20" :height="2"> How to play </c-button>
 	</div>
 </template>
 
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Autoplay } from 'swiper'
+import { Autoplay, FreeMode } from 'swiper'
 import { ref } from 'vue'
 
-const modules = ref([Autoplay])
+const modules = ref([Autoplay, FreeMode])
 </script>
 
 <style scoped>
@@ -67,4 +68,8 @@ const modules = ref([Autoplay])
 	font-size: 35px;
 	margin: 0 auto;
 }
+
+/*.swiper :deep(.swiper-wrapper) {*/
+/*	transition-timing-function: linear;*/
+/*}*/
 </style>

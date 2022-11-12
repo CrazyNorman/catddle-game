@@ -39,7 +39,7 @@ const urls = ref([
 <style lang="scss" scoped>
 .get-yours {
   height: 1117px;
-  font-family: 'Chalkboard';
+  font-family: $font-family;
   font-weight: 700;
   background: url('~@/assets/images/part3.png') center no-repeat;
   background-size: cover;
