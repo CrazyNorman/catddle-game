@@ -32,7 +32,7 @@ const urls = ref([
         <img :src="getImageUrl(url)" alt="" />
       </swiper-slide>
     </swiper>
-    <c-button :width="20" :height="2"> Get Your catddle</c-button>
+    <c-button> Get Your catddle</c-button>
   </div>
 </template>
 

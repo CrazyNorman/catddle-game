@@ -9,7 +9,7 @@
       <img class="say-hi" src="~@/assets/images/community/sayhi.png" alt="catddle_sayhi">
       <img class="video" src="~@/assets/images/community/video.png" alt="catddle_video">
     </div>
-    <c-button :width="20" :height="2">Join Our Community</c-button>
+    <c-button>Join Our Community</c-button>
     <div class="c-title-h3">Catddle limited</div>
   </div>
 </template>
@@ -17,9 +17,11 @@
 <style lang="scss" scoped>
 .community {
   height: 1117px;
+  padding-top: 115px;
+  box-sizing: border-box;
   font-family: 'Chalkboard';
   font-weight: 700;
-  background: url('~@/assets/images/part5.png') center no-repeat;
+  background: url('~@/assets/images/part5.png') top center no-repeat;
   background-size: cover;
 
   .image-container {
@@ -52,7 +54,7 @@
   }
 
   .c-title-h3 {
-    margin-top: 240px;
+    margin-top: 180px;
   }
 }
 

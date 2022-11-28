@@ -18,7 +18,7 @@
 				<img src="~@/assets/images/game1.png" alt="" />
 			</swiper-slide>
 		</swiper>
-		<c-button :width="20" :height="2"> How to play </c-button>
+		<c-button> How to play </c-button>
 	</div>
 </template>
 

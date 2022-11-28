@@ -33,11 +33,11 @@ const technology_info = ref([
       <div class="technology-item" v-for="item in technology_info">
         <div class="c-title-h2">{{ item.title }}</div>
         <div class="c-title-h3" v-html="item.desc"></div>
-        <img :src="getImageUrl(item.img)" alt="catddle" :style="{width: item.width}" />
+<!--        <img :src="getImageUrl(item.img)" alt="catddle" :style="{width: item.width}" />-->
         <img class="free-image" v-if="item?.free" src="~@/assets/images/learn-more/free.png" alt="catddle">
       </div>
     </div>
-    <c-button :width="20" :height="2">Learn More</c-button>
+    <c-button>Learn More</c-button>
   </div>
 </template>
 
@@ -46,7 +46,7 @@ const technology_info = ref([
   height: 1117px;
   font-family: $font-family;
   font-weight: 700;
-  background: url('~@/assets/images/part4.png') center no-repeat;
+  background: url('~@/assets/images/part4.png') bottom center no-repeat;
   background-size: cover;
 
   .c-title-h1 {
