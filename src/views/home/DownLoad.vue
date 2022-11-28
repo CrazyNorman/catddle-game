@@ -106,10 +106,8 @@
   }
 
   .download-btn {
-    font-size: .5em;
-
     .iconfont {
-      font-size: 1em;
+      font-size: 44px;
       color: #3a2016;
       margin-right: 10px;
     }
@@ -177,6 +175,10 @@
       .download-btn {
         width: 277px;
         margin: 0 auto;
+        font-size: .5em;
+        .iconfont {
+          font-size: 1em;
+        }
         .c-button {
           &:first-child {
             width: 40%;
