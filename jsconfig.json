@@ -5,9 +5,12 @@
       "@/*": [
         "src/*"
       ],
+      "~@/*": [
+        "src/*"
+      ],
       "components/*": [
         "src/components/*"
-      ],
+      ]
     }
   },
   "vueCompilerOptions": {
