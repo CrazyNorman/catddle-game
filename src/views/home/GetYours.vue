@@ -43,8 +43,8 @@ onMounted(() => getUrls())
   height: 1117px;
   font-family: $font-family;
   font-weight: 700;
-  background: url('~@/assets/images/part3.png') center no-repeat;
-  background-size: cover;
+  background: url('~@/assets/images/part3.png')top center no-repeat;
+  background-size: 100% 100%;
 
   .c-title-h1 {
     padding: 100px 0 20px;

@@ -66,7 +66,7 @@ onMounted(() => getImages())
   font-family: 'Chalkboard';
   font-weight: 700;
   background: url('~@/assets/images/part2.png') no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
 
   .swiper {
     width: 100%;

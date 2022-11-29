@@ -7,7 +7,8 @@ import pxtovw from 'postcss-px-to-viewport'
 
 const load_pxtovw = pxtovw({
 	viewportWidth: 1920,
-	viewportUnit: 'vw'
+	viewportUnit: 'vw',
+	selectorBlackList: []
 })
 
 export default defineConfig({

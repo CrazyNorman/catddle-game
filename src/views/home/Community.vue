@@ -66,4 +66,43 @@
   font-size: 35px;
   margin: 0 auto;
 }
+
+@media (max-width: 483px) {
+  .community {
+    height: 650px;
+    background: url('~@/assets/images/mobile/part5.png') center no-repeat;
+    background-size: 100% 100%;
+
+    .image-container {
+      height: 400px;
+      margin-top: 60px;
+
+      .photos {
+        width: 233px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .video {
+        width: 177px;
+        top: 138px;
+        left: 41%;
+        z-index: 13;
+      }
+
+      .say-hi {
+        width: 203px;
+        top: 200px;
+        left: 20%;
+        z-index: 14;
+      }
+    }
+
+    .c-button {
+      width: 228px;
+      height: 40px;
+      font-size: 18px;
+    }
+  }
+}
 </style>
