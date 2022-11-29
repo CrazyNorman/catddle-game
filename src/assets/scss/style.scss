@@ -2,7 +2,7 @@
   font-style: normal;
   font-weight: 700;
   font-size: $font-h1;
-  line-height: 64px;
+  //line-height: 64px;
   text-align: center;
   color: $white;
 }
@@ -17,4 +17,15 @@
   font-size: $font-h3;
   text-align: center;
   color: $white;
+}
+
+
+@media (max-width: 483px) {
+  .c-title-h1 {
+    font-size: 25px;
+  }
+
+  .c-title-h2 {
+    font-size: 14px;
+  }
 }
