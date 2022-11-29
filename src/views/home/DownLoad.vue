@@ -11,7 +11,7 @@
           <span class="icon-item"></span>
         </div>
       </c-button>
-      <c-button :width="231" :height="56">WALLET</c-button>
+<!--      <c-button :width="231" :height="56">WALLET</c-button>-->
     </header>
     <main class="content">
       <div class="logo-content" flex>
@@ -135,14 +135,14 @@
           top: 40px;
         }
 
-        &:nth-child(2) {
-          width: 99px;
-          height: 24px;
-          top: 83px;
-          right: 40px;
-        }
+        //&:nth-child(2) {
+        //  width: 99px;
+        //  height: 24px;
+        //  top: 83px;
+        //  right: 40px;
+        //}
 
-        &:nth-child(3) {
+        &:nth-child(2) {
           width: 99px;
           height: 24px;
           top: 40px;
@@ -151,7 +151,9 @@
       }
 
       .line-left,.line-right {
-        height: 120%;
+        width: 3px;
+        height: 180%;
+        top: -5px;
       }
     }
 

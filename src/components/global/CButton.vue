@@ -47,4 +47,17 @@ const h = computed(() => (props.height / 19.2).toFixed(2)  + 'vw')
 	position: relative;
   background: linear-gradient(#ffc700 82%, #f4af00 18%);
 }
+
+
+@media (max-width: 483px) {
+  .c-button {
+    padding: 3px;
+    border-radius: 10px;
+  }
+
+  .c-button-container {
+    border-radius: 8px;
+    border: 3px solid #ffffff;
+  }
+}
 </style>
