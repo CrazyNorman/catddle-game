@@ -25,7 +25,7 @@ onMounted(() => getUrls())
       :loop="true"
       :speed="3000"
       :freeMode="true"
-      :autoplay="{delay: 1000, disableOnInteraction: false}"
+      :autoplay="{delay: 0, disableOnInteraction: false}"
       :slidesPerView="isMobile() ? 1 : 3"
       :spaceBetween="2"
       :modules="modules"
@@ -59,6 +59,10 @@ onMounted(() => getUrls())
     width: 100%;
     height: 456px;
     margin: 45px 0 69px;
+
+    &:deep(.swiper-wrapper) {
+      transition-timing-function: linear;
+    }
   }
 
   .swiper-slide img {

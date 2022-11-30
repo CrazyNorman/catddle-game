@@ -22,7 +22,8 @@
   font-family: 'Chalkboard';
   font-weight: 700;
   background: url('~@/assets/images/part5.png') top center no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
+  position: relative;
 
   .image-container {
     margin: 40px 0;
@@ -56,20 +57,17 @@
   .c-title-h3 {
     margin-top: 180px;
   }
-}
 
-.description {
-  padding: 115px 0 10px;
-}
-
-.c-button {
-  font-size: 35px;
-  margin: 0 auto;
+  .c-button {
+    font-size: 35px;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 483px) {
   .community {
-    height: 650px;
+    height: 800px;
+    padding-top: 100px;
     background: url('~@/assets/images/mobile/part5.png') center no-repeat;
     background-size: 100% 100%;
 
@@ -102,6 +100,14 @@
       width: 228px;
       height: 40px;
       font-size: 18px;
+    }
+
+    .c-title-h3 {
+      font-size: 14px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }

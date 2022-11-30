@@ -22,7 +22,7 @@
           <img src="~@/assets/images/catddle.png" alt="" />
         </div>
       </div>
-      <p class="c-title-h1">Description: balabalabalabalabalabala</p>
+      <p class="c-title-h1">Description: <br /> balabalabalabalabalabala</p>
       <div class="download-btn" flex="dir:left main:center">
         <c-button :width="250" :height="80">
           <span><i class="iconfont icon-apple"></i>IOS</span>
@@ -41,8 +41,8 @@
   font-size: 28px;
   font-family: $font-family;
   font-weight: 700;
-  background: url('~@/assets/images/part1.png') center no-repeat;
-  background-size: cover;
+  background: url('~@/assets/images/part1.png')top center no-repeat;
+  background-size: 100% 100%;
 
   .nav-bar {
     padding: 25px 38px;
@@ -116,9 +116,9 @@
 
 @media (max-width: 483px) {
   .download-module {
-    height: 650px;
+    height: 852px;
     background: url('~@/assets/images/mobile/part1.png') center no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
 
     .nav-bar {
       height: 109px;
@@ -129,10 +129,10 @@
         position: absolute;
 
         &:first-child {
-          width: 50px;
-          height: 24px;
-          left: 40px;
-          top: 40px;
+          width: 55px;
+          height: 28px;
+          left: 14px;
+          top: 53px;
         }
 
         //&:nth-child(2) {
@@ -143,22 +143,23 @@
         //}
 
         &:nth-child(2) {
-          width: 99px;
-          height: 24px;
-          top: 40px;
-          right: 40px;
+          width: 104px;
+          height: 28px;
+          top: 53px;
+          right: 14px;
         }
       }
 
       .line-left,.line-right {
         width: 3px;
-        height: 180%;
+        height: 160%;
         top: -5px;
       }
     }
 
     .content {
       font-size: 30px;
+      padding-top: 120px;
       .logo-content {
         font-size: 20px;
         flex-direction: column;

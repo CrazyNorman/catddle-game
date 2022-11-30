@@ -8,7 +8,7 @@
         :speed="3000"
         :freeMode="true"
         :autoplay="{
-				delay: 1000,
+				delay: 0,
 				disableOnInteraction: false
 			}"
         :slidesPerView="isMobile() ? 4 : 6"
@@ -25,7 +25,7 @@
         :speed="3000"
         :freeMode="true"
         :autoplay="{
-				delay: 1000,
+				delay: 0,
 				disableOnInteraction: false
 			}"
         :slidesPerView="4"
@@ -42,16 +42,16 @@
 
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Autoplay, FreeMode } from 'swiper'
+import { Autoplay } from 'swiper'
 import { ref, onMounted } from 'vue'
 import { getImageUrl } from "@/utils"
 import { isMobile } from "@/utils";
 
-const modules = ref([Autoplay, FreeMode])
+const modules = ref([Autoplay])
 const images = ref([])
 
 function getImages () {
-  for (let i = 1; i < 6; i++) {
+  for (let i = 1; i < 7; i++) {
     images.value.push(getImageUrl(`how-to-play/play-${i}.png`))
   }
 }
@@ -82,6 +82,10 @@ onMounted(() => getImages())
   .c-button {
     font-size: 35px;
     margin: 0 auto;
+  }
+
+  .swiper :deep(.swiper-wrapper) {
+  	transition-timing-function: linear;
   }
 }
 
