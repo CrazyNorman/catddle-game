@@ -8,10 +8,13 @@ import pxtovw from 'postcss-px-to-viewport'
 const load_pxtovw = pxtovw({
 	viewportWidth: 1920,
 	viewportUnit: 'vw',
-	selectorBlackList: []
+	selectorBlackList: ['home', 'cats-top', 'cats-content', 'login', 'cats-title'],
+	include: /mobile/g,
+	exclude: undefined
 })
 
 export default defineConfig({
+	base: './',
 	plugins: [vue()],
 	css: {
 		preprocessorOptions: {
@@ -42,7 +45,9 @@ export default defineConfig({
 		alias: {
 			'@': fileURLToPath(new URL('./src', import.meta.url)),
 			'~@': fileURLToPath(new URL('./src', import.meta.url)),
+			'assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
 			components: fileURLToPath(new URL('./src/components', import.meta.url))
 		}
-	}
+	},
+	server: '0.0.0.0'
 })

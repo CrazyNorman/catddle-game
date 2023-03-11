@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'HelveticaBold';
+  src: url("Helvetica-Bold.ttf") format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ModakRegular';
+  src: url("Modak-Regular.ttf") format('truetype');
+  font-display: swap;
+}
