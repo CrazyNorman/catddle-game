@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "34546495",
+      "name": "ic_music",
+      "font_class": "ic_music",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
       "icon_id": "29544458",
       "name": "OpenSea-fill",
       "font_class": "opensea",

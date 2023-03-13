@@ -56,6 +56,11 @@ const descriptions = ref([
     .cat-photo {
       width: 338px;
       margin-right: 33px;
+      transition: .4s all ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
 
       img {
         width: 100%;

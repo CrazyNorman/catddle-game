@@ -1,6 +1,7 @@
 <script setup>
 import NavHeader from "@/views/home/NavHeader.vue"
 import CatContent from "@/views/home/CatContent.vue"
+import MusicPlayer from '@/components/MusicPlayer.vue'
 import useImage from '@/hooks/useImage.js'
 import { getImageUrl } from '@/utils/index.js'
 
@@ -32,6 +33,7 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
     <main class="cats-content">
       <cat-content />
     </main>
+    <music-player />
   </div>
 </template>
 
