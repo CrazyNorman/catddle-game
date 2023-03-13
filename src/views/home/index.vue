@@ -186,6 +186,8 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
   outline: none;
   border: none;
   border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  transition: .4s all ease-in-out;
 
   &:hover {
     color: #ffffff;
