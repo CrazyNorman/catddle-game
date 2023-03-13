@@ -9,7 +9,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import musicUrl from '@/assets/music/test.mp3'
+import musicUrl from '@/assets/music/untilYou.ogg'
 
 const audioPlayer = ref(null)
 const isPlaying = ref(false)
