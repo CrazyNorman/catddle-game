@@ -1,38 +1,36 @@
 <script setup>
-import { onMounted, ref } from "vue";
-import { getImageUrl } from "@/utils";
-import NavHeader from "@/views/home/NavHeader.vue";
+import NavHeader from "@/views/home/NavHeader.vue"
+import CatContent from "@/views/home/CatContent.vue"
+import useImage from '@/hooks/useImage.js'
+import { getImageUrl } from '@/utils/index.js'
 
-const clouds = ref([])
-
-function getClouds () {
-  for (let i = 1; i < 5; i++) {
-    clouds.value.push(getImageUrl(`bg_cloud${i}`))
-  }
-}
-
-onMounted(() => getClouds())
+const cloud = useImage('bg_cloud', 4)
+const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg_ball'])
 </script>
 
 <template>
   <div class="home">
     <div class="cats-top">
       <nav-header />
-      <div class="cats-title">GENKI CATS</div>
-      <div>
-        <img v-for="url in clouds" :key="url" :src="url" alt="">
+      <h2 class="cats-title">GENKI CATS</h2>
+      <div class="cloud-box">
+        <div class="cloud">
+          <img v-for="item in cloud" :key="item.name" :src="item.url" :class="item.name" alt="cloud" />
+        </div>
+        <div class="cloud cloud-copy">
+          <img v-for="item in cloud" :key="item.name + 'copy'" :src="item.url" :class="item.name" alt="cloud" />
+        </div>
       </div>
       <div class="grass">
-        <img class="grass-justify" :src="getImageUrl('bg03.png')" alt="grass" />
-        <img class="grass_left" :src="getImageUrl('bg_Grass01.png')" alt="" />
-        <img class="grass_right" :src="getImageUrl('bg_Grass03.png')" alt="" />
-        <img class="mailbox" :src="getImageUrl('bg_mailbox.png')" alt="" />
-        <img class="ball" :src="getImageUrl('bg_ball.png')" alt="" />
-        <img class="cat-center" :src="getImageUrl('bg_cat.png')" alt="">
+        <img v-for="item in grass" :key="item.name" :src="item.url" :class="item.name" alt="grass" />
+        <div class="bg_cat">
+          <img :src="getImageUrl('bg_cat.png')" alt="cat" />
+          <button class="access-btn">Early Access</button>
+        </div>
       </div>
     </div>
     <main class="cats-content">
-
+      <cat-content />
     </main>
   </div>
 </template>
@@ -50,6 +48,8 @@ onMounted(() => getClouds())
 
 .cats-content {
   min-height: 1500px;
+  padding-top: 453px;
+  box-sizing: border-box;
   background: url("@/assets/images/bg02.png") no-repeat;
 }
 
@@ -58,8 +58,74 @@ onMounted(() => getClouds())
   color: #ffffff;
   text-align: center;
   font-size: 140px;
+  font-weight: normal;
   font-family: ModakRegular;
   margin: 94px auto 0;
+}
+
+@keyframes move {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes move2 {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+.cloud-box {
+  width: 100%;
+  position: absolute;
+  top: 110px;
+  height: 500px;
+  overflow: hidden
+}
+
+.cloud {
+  width: 100%;
+  height: 276px;
+  position: absolute;
+  top: 0;
+  animation: 30s move infinite linear;
+
+  .bg_cloud1 {
+    position: absolute;
+    top: 89px;
+    left: 196px;
+  }
+
+  .bg_cloud2 {
+    position: absolute;
+    top: 169px;
+    left: 1043px;
+  }
+
+  .bg_cloud3 {
+    position: absolute;
+    top: 89px;
+    right: 255px;
+  }
+
+  .bg_cloud4 {
+    position: absolute;
+    top: 0;
+    left: 590px;
+  }
+}
+
+.cloud-copy {
+  left: 100%;
+  animation: 30s move2 infinite linear;
 }
 
 .grass {
@@ -68,39 +134,62 @@ onMounted(() => getClouds())
   position: absolute;
   bottom: 33px;
 
-  .grass-justify {
+  .bg_grass2 {
     width: 100%;
   }
 
-  .grass_left {
+  .bg_grass1 {
     position: absolute;
     top: 63px;
     left: 259px;
   }
 
-  .grass_right {
+  .bg_grass3 {
     position: absolute;
     top: 26px;
     right: 156px;
   }
 
-  .mailbox {
+  .bg_mailbox {
     position: absolute;
     right: 318px;
     top: 97px;
   }
 
-  .ball {
+  .bg_ball {
     position: absolute;
     left: 609px;
     top: 198px;
   }
-  .cat-center  {
+
+  .bg_cat {
     position: absolute;
     left: 50%;
     top: -106px;
     transform: translateX(-50%);
     margin: auto;
+  }
+}
+
+.access-btn {
+  width: 240px;
+  height: 55px;
+  line-height: 60px;
+  position: absolute;
+  bottom: -108px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #67842B;
+  font-size: 30px;
+  font-family: HelveticaBold;
+  background: #ffffff;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+
+  &:hover {
+    color: #ffffff;
+    background: #67842B;
   }
 }
 </style>
