@@ -68,4 +68,27 @@ const descriptions = ref([
     }
   }
 }
+
+@media (max-width: 800px) {
+  .cat-content {
+    .cat-content-title {
+      font-size: 1.2em;
+    }
+
+    .description {
+      font-size: .1em;
+    }
+
+    .cat-photos {
+      margin-top: 88px;
+      align-items: center;
+      flex-direction: column;
+
+      .cat-photo {
+        width: 49%;
+        margin-bottom: 31px;
+      }
+    }
+  }
+}
 </style>

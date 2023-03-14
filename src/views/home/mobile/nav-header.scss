@@ -1,0 +1,15 @@
+@media (max-width: 800px) {
+  .nav-header {
+    height: 95px;
+    padding: 0 13%;
+
+    .nav-bar {
+      display: none;
+    }
+
+    .nav-bar-mobile {
+      display: block;
+      z-index: 2;
+    }
+  }
+}

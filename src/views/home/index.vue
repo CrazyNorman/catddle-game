@@ -1,6 +1,6 @@
 <script setup>
-import NavHeader from "@/views/home/NavHeader.vue"
-import CatContent from "@/views/home/CatContent.vue"
+import NavHeader from "@/views/home/components/NavHeader.vue"
+import CatContent from "@/views/home/components/CatContent.vue"
 import MusicPlayer from '@/components/MusicPlayer.vue'
 import useImage from '@/hooks/useImage.js'
 import { getImageUrl } from '@/utils/index.js'
@@ -39,7 +39,7 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
 
 <style lang="scss" scoped>
 .home {
-  min-width: 1280px;
+  //min-width: 1280px;
 }
 
 .cats-top {
@@ -56,7 +56,7 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
 }
 
 .cats-title {
-  width: 1109px;
+  //width: 1109px;
   color: #ffffff;
   text-align: center;
   font-size: 140px;
@@ -196,4 +196,6 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
     background: #67842B;
   }
 }
+
+@import "mobile/home.scss";
 </style>

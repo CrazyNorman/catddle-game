@@ -57,4 +57,19 @@ function play () {
     rotate: 720deg
   }
 }
+
+@media (max-width: 800px) {
+  .music-player {
+    position: fixed;
+    left: 73%;
+    bottom: 20px;
+    z-index: 100;
+
+    .music-icon {
+      width: 7vw;
+      height: 7vw;
+      right: 0;
+    }
+  }
+}
 </style>

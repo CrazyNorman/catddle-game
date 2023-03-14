@@ -1,0 +1,67 @@
+@media (max-width: 800px) {
+  .home {
+    .cats-top {
+      background: url("@/assets/images/mobile/bg01.png") no-repeat;
+      background-size: cover;
+    }
+
+    .cats-content {
+      padding-top: 200px;
+      background: url("@/assets/images/mobile/bg02.png") no-repeat;
+      background-size: cover;
+    }
+
+    .cats-title {
+      font-size: 120px;
+      line-height: 90px;
+    }
+
+    .cloud-box {
+      display: none;
+    }
+
+    .grass {
+      .bg_grass1 {
+        width: 54.5%;
+        left: -10%;
+      }
+
+      .bg_grass2 {
+        display: none;
+      }
+
+      .bg_grass3 {
+        width: 70%;
+        right: -25%;
+      }
+
+      .bg_mailbox {
+        width: 48.5%;
+        top: 1200px;
+        right: -10%;
+      }
+
+      .bg_ball {
+        width: 14%;
+        left: 58px;
+      }
+
+      .bg_cat {
+        width: 42.4%;
+        top: -70px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .access-btn {
+        width: 100%;
+        padding: 12px 0 20px;
+        font-size: .5em;
+        bottom: 320px;
+        border-radius: 10px;
+      }
+    }
+  }
+}
