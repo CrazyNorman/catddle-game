@@ -28,8 +28,8 @@ function play () {
 <style lang="scss" scoped>
 .music-player {
   position: fixed;
-  left: 0;
-  top: 95.5vh;
+  left: 1vw;
+  top: 94vh;
 
   .music-icon {
     width: 55px;
@@ -61,6 +61,7 @@ function play () {
 @media (max-width: 800px) {
   .music-player {
     position: fixed;
+    top: 95.5vh;
     left: 90%;
     z-index: 10;
 
