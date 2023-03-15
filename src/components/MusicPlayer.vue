@@ -9,7 +9,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import musicUrl from '@/assets/music/untilYou.ogg'
+import musicUrl from '@/assets/music/genki_main_theme.mp3'
 
 const audioPlayer = ref(null)
 const isPlaying = ref(false)
