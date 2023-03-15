@@ -12,12 +12,16 @@
         <p class="cat-description">{{ descriptions[i] }}</p>
       </section>
     </div>
+    <div class="mailbox">
+      <img :src="getImageUrl('bg_mailbox.png')" alt="mailbox" />
+    </div>
   </div>
 </template>
 
 <script setup>
-import useImage from '@/hooks/useImage.js'
 import { ref } from 'vue'
+import useImage from '@/hooks/useImage.js'
+import { getImageUrl } from '@/utils/index.js'
 
 const catPhotos = useImage('cat_img', 3)
 const descriptions = ref([
@@ -67,10 +71,16 @@ const descriptions = ref([
       }
     }
   }
+
+  .mailbox {
+    display: none;
+  }
 }
 
 @media (max-width: 800px) {
   .cat-content {
+    position: relative;
+
     .cat-content-title {
       font-size: 1.2em;
     }
@@ -87,6 +97,22 @@ const descriptions = ref([
       .cat-photo {
         width: 49%;
         margin-bottom: 31px;
+      }
+    }
+
+    .mailbox {
+      width: 48vw;
+      height: 200px;
+      display: block;
+      margin-top: 40px;
+      overflow: hidden;
+      position: absolute;
+      right: 0;
+
+      img {
+        width: 100%;
+        position: absolute;
+        right: -34px;
       }
     }
   }

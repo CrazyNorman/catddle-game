@@ -29,7 +29,7 @@ function play () {
 .music-player {
   position: fixed;
   left: 0;
-  bottom: 0;
+  top: 95.5vh;
 
   .music-icon {
     width: 55px;
@@ -61,14 +61,12 @@ function play () {
 @media (max-width: 800px) {
   .music-player {
     position: fixed;
-    left: 73%;
-    bottom: 20px;
-    z-index: 100;
+    left: 90%;
+    z-index: 10;
 
     .music-icon {
       width: 7vw;
       height: 7vw;
-      right: 0;
     }
   }
 }

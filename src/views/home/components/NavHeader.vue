@@ -12,6 +12,7 @@
              alt="catddle"
              :data-normal="item.url"
              :data-hover="urls_hover[i].url"
+             @click="goto(item.name)"
              @mouseover.stop="hoverNav"
              @mouseleave.stop="leaveNav"
         />
@@ -26,7 +27,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { getImageUrl } from "@/utils";
+import { getImageUrl, goto } from "@/utils";
 import useImage from '@/hooks/useImage.js'
 import NavMenu from '@/views/home/components/NavMenu.vue'
 

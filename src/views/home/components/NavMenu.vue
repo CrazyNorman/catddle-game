@@ -1,23 +1,22 @@
 <template>
-  <div>
-    <Teleport to="body">
-      <div v-show="visible" class="nav-mask" @click="emits('expand')">
-        <div class="nav-icons" flex="dir:top cross:center">
-          <img class="nav-icon"
-               v-for="icon in nav_icons"
-               :key="icon.url"
-               :src="icon.url"
-               alt="catddle" />
-          <img class="login" :src="getImageUrl('mobile/login.png')" alt="Sign in" />
-        </div>
+  <Teleport to="body">
+    <div v-if="visible" class="nav-mask" @click="emits('expand')">
+      <div class="nav-icons" flex="dir:top cross:center">
+        <img class="nav-icon"
+             v-for="icon in nav_icons"
+             :key="icon.url"
+             :src="icon.url"
+             @click="goto(icon.name)"
+             alt="catddle" />
+        <img class="login" :src="getImageUrl('mobile/login.png')" alt="Sign in" />
       </div>
-    </Teleport>
-  </div>
+    </div>
+  </Teleport>
 </template>
 
 <script setup>
 import useImage from '@/hooks/useImage.js'
-import { getImageUrl } from '@/utils/index.js'
+import { getImageUrl, goto } from '@/utils/index.js'
 
 defineProps(['visible'])
 const emits = defineEmits(['expand'])

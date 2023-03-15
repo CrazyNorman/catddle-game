@@ -17,13 +17,41 @@
     }
 
     .cloud-box {
-      display: none;
+      height: 400px;
+      top: 95px;
+
+      .bg_cloud1 {
+        top: 112px;
+        left: 0;
+      }
+
+      .bg_cloud2 {
+        top: 0;
+        left: 0;
+      }
+
+      .bg_cloud3 {
+        top: 71vw;
+        right: 0;
+      }
+
+      .bg_cloud4 {
+        display: none;
+      }
+      img {
+        width: 40vw;
+      }
     }
 
     .grass {
+      height: 600px;
+      bottom: -330px;
+      overflow: hidden;
+
       .bg_grass1 {
         width: 54.5%;
         left: -10%;
+        top: 220px;
       }
 
       .bg_grass2 {
@@ -33,6 +61,7 @@
       .bg_grass3 {
         width: 70%;
         right: -25%;
+        top: 200px;
       }
 
       .bg_mailbox {
@@ -43,12 +72,13 @@
 
       .bg_ball {
         width: 14%;
-        left: 58px;
+        left: 28px;
+        top: 345px;
       }
 
       .bg_cat {
         width: 42.4%;
-        top: -70px;
+        top: 166px;
 
         img {
           width: 100%;
@@ -58,8 +88,8 @@
       .access-btn {
         width: 100%;
         padding: 12px 0 20px;
-        font-size: .5em;
-        bottom: 320px;
+        font-size: .8em;
+        bottom: 310px;
         border-radius: 10px;
       }
     }
