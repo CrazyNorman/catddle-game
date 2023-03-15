@@ -98,6 +98,10 @@ const descriptions = ref([
         width: 49%;
         margin-bottom: 31px;
       }
+
+      .cat-description {
+        font-size: 16px;
+      }
     }
 
     .mailbox {
