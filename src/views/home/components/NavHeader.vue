@@ -1,6 +1,6 @@
 <template>
   <header class="nav-header" flex="main:justify cross:center">
-    <div class="logo">
+    <div class="logo" flex="cross:center">
       <img :src="getImageUrl('nav/logo1.png')" alt="logo" />
     </div>
     <div class="nav-bar">
@@ -18,7 +18,7 @@
         />
       </div>
     </div>
-    <div class="nav-bar-mobile">
+    <div class="nav-bar-mobile" flex="cross:center">
       <img :src="getImageUrl('mobile/expand.png')" alt="expand" @click="showNavMenu" />
       <nav-menu :visible="isShow" @expand="showNavMenu" />
     </div>
@@ -58,13 +58,15 @@ const isShow = ref(false)
 
 function showNavMenu () {
   isShow.value = !isShow.value
+  if (isShow.value) document.documentElement.style.overflowY = 'hidden'
+  else document.documentElement.style.overflowY = 'scroll'
 }
 </script>
 
 <style lang="scss" scoped>
 .nav-header {
   height: 55px;
-  padding: 0 21%;
+  padding: 6px 21%;
   text-align: right;
 
   .nav-bar {

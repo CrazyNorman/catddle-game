@@ -1,15 +1,27 @@
 @media (max-width: 800px) {
   .nav-header {
-    height: 95px;
-    padding: 0 13%;
+    height: 16vw;
+    padding: 0 13vw;
+
+    .logo {
+      width: 8vw;
+
+      img {
+        width: 100%;
+      }
+    }
 
     .nav-bar {
       display: none;
     }
 
     .nav-bar-mobile {
-      display: block;
+      width: 4.8vw;
       z-index: 2;
+
+      img {
+        width: 100%;
+      }
     }
   }
 }

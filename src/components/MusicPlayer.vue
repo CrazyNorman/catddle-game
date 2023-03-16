@@ -1,5 +1,5 @@
 <template>
-  <div class="music-player">
+  <div :class="{'music-player': true, 'music-player-mobile': isMobile}">
     <div :class="{'music-icon': true, 'is-play': isPlaying}" @click="play"></div>
     <audio ref="audioPlayer" :src="musicUrl" loop>
       你的浏览器不兼容
@@ -9,6 +9,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { isMobile } from '@/utils/index.js'
 import musicUrl from '@/assets/music/genki_main_theme.mp3'
 
 const audioPlayer = ref(null)
@@ -29,7 +30,7 @@ function play () {
 .music-player {
   position: fixed;
   left: 1vw;
-  top: 94vh;
+  bottom: 1vw;
 
   .music-icon {
     width: 55px;
@@ -45,24 +46,25 @@ function play () {
 
     &.is-play {
       animation: 15s rotateLoop linear infinite;
+      -webkit-animation: 15s rotateLoop linear infinite;
     }
   }
 }
 
 @keyframes rotateLoop {
   0% {
-    rotate: 0
+    transform: rotate(0);
   }
   100% {
-    rotate: 720deg
+    transform: rotate(720deg);
   }
 }
 
 @media (max-width: 800px) {
-  .music-player {
+  .music-player-mobile {
     position: fixed;
-    top: 95.5vh;
-    left: 90%;
+    left: 91.8vw;
+    bottom: 1vw;
     z-index: 10;
 
     .music-icon {
