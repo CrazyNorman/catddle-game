@@ -5,4 +5,4 @@ import '@/assets/scss/style.scss'
 import 'normalize.css'
 
 import 'flex.css'
-import 'swiper/css'
+// import 'swiper/css'
