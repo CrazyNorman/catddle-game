@@ -6,6 +6,8 @@
     }
 
     .cats-content {
+      height: 352vw;
+      min-height: 1500px;
       padding-top: 200px;
       background: url("@/assets/images/mobile/bg02.png") no-repeat;
       background-size: cover;
@@ -84,14 +86,14 @@
           width: 100%;
         }
       }
+    }
 
-      .access-btn {
-        width: 100%;
-        padding: 12px 0 20px;
-        font-size: 20px;
-        bottom: 310px;
-        border-radius: 10px;
-      }
+    .access-btn {
+      width: 42.7vw;
+      padding: 12px 0 20px;
+      font-size: 20px;
+      bottom: 230px;
+      border-radius: 10px;
     }
   }
 }

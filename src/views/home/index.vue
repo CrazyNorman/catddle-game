@@ -26,9 +26,9 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
         <img v-for="item in grass" :key="item.name" :src="item.url" :class="item.name" alt="grass" />
         <div class="bg_cat">
           <img :src="getImageUrl('bg_cat.png')" alt="cat" />
-          <button class="access-btn">Early Access</button>
         </div>
       </div>
+      <button class="access-btn">Early Access</button>
     </div>
     <main class="cats-content">
       <cat-content />
@@ -38,21 +38,18 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
 </template>
 
 <style lang="scss" scoped>
-.home {
-  //min-width: 1280px;
-}
-
 .cats-top {
   position: relative;
   min-height: 660px;
-  background: url("@/assets/images/bg01.png") no-repeat;
+  background: url("@/assets/images/bg01.png") center bottom no-repeat;
 }
 
 .cats-content {
-  min-height: 1500px;
+  height: 1500px;
   padding-top: 453px;
   box-sizing: border-box;
   background: url("@/assets/images/bg02.png") no-repeat;
+  background-size: cover;
 }
 
 .cats-title {
@@ -141,35 +138,44 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
   }
 
   .bg_grass1 {
+    width: 409px;
     position: absolute;
     top: 63px;
     left: 259px;
   }
 
   .bg_grass3 {
+    width: 530px;
     position: absolute;
     top: 26px;
     right: 156px;
   }
 
   .bg_mailbox {
+    width: 364px;
     position: absolute;
     right: 318px;
     top: 97px;
   }
 
   .bg_ball {
+    width: 106px;
     position: absolute;
     left: 609px;
     top: 198px;
   }
 
   .bg_cat {
+    width: 337px;
     position: absolute;
     left: 50%;
     top: -106px;
     transform: translateX(-50%);
     margin: auto;
+
+    img {
+      width: 100%;
+    }
   }
 }
 
@@ -178,7 +184,7 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
   height: 55px;
   line-height: 60px;
   position: absolute;
-  bottom: -108px;
+  bottom: -228px;
   left: 50%;
   transform: translateX(-50%);
   color: #67842B;
