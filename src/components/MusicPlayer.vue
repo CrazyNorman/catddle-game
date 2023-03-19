@@ -63,8 +63,8 @@ function play () {
 @media (max-width: 800px) {
   .music-player-mobile {
     position: fixed;
-    left: 91.8vw;
-    bottom: 1vw;
+    left: 90vw;
+    bottom: 2vw;
     z-index: 10;
 
     .music-icon {

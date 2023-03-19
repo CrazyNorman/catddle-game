@@ -40,7 +40,7 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
 <style lang="scss" scoped>
 .cats-top {
   position: relative;
-  min-height: 660px;
+  height: 660px;
   background: url("@/assets/images/bg01.png") center bottom no-repeat;
 }
 
@@ -56,6 +56,7 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
   //width: 1109px;
   color: #ffffff;
   text-align: center;
+  text-shadow: 0 4px 4px rgba(0,0,0,0.25);
   font-size: 140px;
   font-weight: normal;
   font-family: ModakRegular;
@@ -180,8 +181,8 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
 }
 
 .access-btn {
-  width: 240px;
-  height: 55px;
+  width: 280px;
+  height: 60px;
   line-height: 60px;
   position: absolute;
   bottom: -228px;
@@ -193,7 +194,7 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
   background: #ffffff;
   outline: none;
   border: none;
-  border-radius: 5px;
+  border-radius: 16px;
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
   transition: .4s all ease-in-out;
 

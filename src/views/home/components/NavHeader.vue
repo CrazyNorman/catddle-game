@@ -66,7 +66,7 @@ function showNavMenu () {
 <style lang="scss" scoped>
 .nav-header {
   height: 55px;
-  padding: 6px 21%;
+  padding: 6px 21vw;
   text-align: right;
 
   .nav-bar {

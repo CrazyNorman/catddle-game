@@ -25,9 +25,9 @@ import { getImageUrl } from '@/utils/index.js'
 
 const catPhotos = useImage('cat_img', 3)
 const descriptions = ref([
-  'meet your first web3 pet like a charm',
-  'dreams built on reality',
-  'a cat can be with you for a lifetime'
+  'Meet your first web3 pet like a charm',
+  'Dreams built on reality',
+  'A cat can be with you for a lifetime'
 ])
 </script>
 

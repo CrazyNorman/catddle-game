@@ -1,6 +1,7 @@
 @media (max-width: 800px) {
   .home {
     .cats-top {
+      height: 135vw;
       background: url("@/assets/images/mobile/bg01.png") no-repeat;
       background-size: cover;
     }
@@ -14,16 +15,17 @@
     }
 
     .cats-title {
-      font-size: 110px;
-      line-height: 90px;
+      font-size: 24vw;
+      line-height: 70px;
+      margin-top: 15vw;
     }
 
     .cloud-box {
       height: 400px;
-      top: 95px;
+      top: 15vw;
 
       .bg_cloud1 {
-        top: 112px;
+        top: 17vw;
         left: 0;
       }
 
@@ -33,7 +35,7 @@
       }
 
       .bg_cloud3 {
-        top: 71vw;
+        top: 54vw;
         right: 0;
       }
 
@@ -80,7 +82,7 @@
 
       .bg_cat {
         width: 42.4%;
-        top: 166px;
+        top: 46.7vw;
 
         img {
           width: 100%;
@@ -92,7 +94,7 @@
       width: 42.7vw;
       padding: 12px 0 20px;
       font-size: 20px;
-      bottom: 230px;
+      bottom: 49vw;
       border-radius: 10px;
     }
   }
