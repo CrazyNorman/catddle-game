@@ -56,7 +56,7 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
   //width: 1109px;
   color: #ffffff;
   text-align: center;
-  text-shadow: 0 4px 4px rgba(0,0,0,0.25);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   font-size: 140px;
   font-weight: normal;
   font-family: ModakRegular;
@@ -100,24 +100,28 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
 
   .bg_cloud1 {
     position: absolute;
+    width: 299px;
     top: 89px;
     left: 196px;
   }
 
   .bg_cloud2 {
     position: absolute;
+    width: 252px;
     top: 169px;
     left: 1043px;
   }
 
   .bg_cloud3 {
     position: absolute;
+    width: 299px;
     top: 89px;
     right: 255px;
   }
 
   .bg_cloud4 {
     position: absolute;
+    width: 198px;
     top: 0;
     left: 590px;
   }

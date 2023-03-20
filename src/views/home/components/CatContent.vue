@@ -77,16 +77,16 @@ const descriptions = ref([
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 820px) {
   .cat-content {
     position: relative;
 
     .cat-content-title {
-      font-size: 1.2em;
+      font-size: 8.8vw;
     }
 
     .description {
-      font-size: .1em;
+      font-size: 2.7vw;
     }
 
     .cat-photos {
@@ -100,7 +100,7 @@ const descriptions = ref([
       }
 
       .cat-description {
-        font-size: 16px;
+        font-size: 4.3vw;
       }
     }
 

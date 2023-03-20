@@ -30,7 +30,7 @@ const nav_icons = useImage([
 </script>
 
 <style lang="scss" scoped>
-@media (max-width: 800px) {
+@media (max-width: 820px) {
   .nav-mask {
     z-index: 10;
     position: absolute;

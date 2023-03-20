@@ -1,4 +1,4 @@
-@media (max-width: 800px) {
+@media (max-width: 820px) {
   .home {
     .cats-top {
       height: 135vw;
@@ -16,15 +16,16 @@
 
     .cats-title {
       font-size: 24vw;
-      line-height: 70px;
+      line-height: 18vw;
       margin-top: 15vw;
     }
 
     .cloud-box {
-      height: 400px;
+      height: 76.3vw;
       top: 15vw;
 
       .bg_cloud1 {
+        width: 39.8vw;
         top: 17vw;
         left: 0;
       }
@@ -48,14 +49,14 @@
     }
 
     .grass {
-      height: 600px;
-      bottom: -330px;
+      height: 80vw;
+      bottom: -44vw;
       overflow: hidden;
 
       .bg_grass1 {
         width: 54.5%;
         left: -10%;
-        top: 220px;
+        top: 29.3vw;
       }
 
       .bg_grass2 {
@@ -65,24 +66,24 @@
       .bg_grass3 {
         width: 70%;
         right: -25%;
-        top: 200px;
+        top: 26.7vw;
       }
 
       .bg_mailbox {
         width: 48.5%;
-        top: 1200px;
+        top: 160vw;
         right: -10%;
       }
 
       .bg_ball {
         width: 14%;
         left: 28px;
-        top: 345px;
+        top: 46vw;
       }
 
       .bg_cat {
         width: 42.4%;
-        top: 46.7vw;
+        top: 15.7vw;
 
         img {
           width: 100%;
@@ -92,8 +93,8 @@
 
     .access-btn {
       width: 42.7vw;
-      padding: 12px 0 20px;
-      font-size: 20px;
+      padding: 3.6vw 0 5.2vw;
+      font-size: 4.8vw;
       bottom: 49vw;
       border-radius: 10px;
     }

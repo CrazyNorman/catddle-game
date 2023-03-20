@@ -60,7 +60,7 @@ function play () {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 820px) {
   .music-player-mobile {
     position: fixed;
     left: 90vw;
