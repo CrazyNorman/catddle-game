@@ -1,10 +1,8 @@
 <template>
   <div class="cat-content">
-    <h2 class="cat-content-title">GENKI CATS</h2>
+    <h2 class="cat-content-title">Features</h2>
     <section class="description">
-      contentcontentcontentcontentcontentcontent <br />
-      contentcontentcontent <br />
-      contentcontent <br />
+      You are going to adopt your first Web3 pet!
     </section>
     <div class="cat-photos" flex="main:center">
       <section class="cat-photo" v-for="(item, i) in catPhotos" :key="item.name">
@@ -16,6 +14,7 @@
       <img :src="getImageUrl('bg_mailbox.png')" alt="mailbox" />
     </div>
   </div>
+  <div class="copyright">CatddleLabs Copyright ©2022-2023</div>
 </template>
 
 <script setup>
@@ -75,6 +74,15 @@ const descriptions = ref([
   .mailbox {
     display: none;
   }
+}
+
+.copyright {
+  color: #ffffff;
+  text-align: center;
+  position: absolute;
+  bottom: 2vw;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media (max-width: 820px) {

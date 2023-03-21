@@ -40,6 +40,7 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
 <style lang="scss" scoped>
 .cats-top {
   position: relative;
+  z-index: 2;
   height: 660px;
   background: url("@/assets/images/bg01.png") center bottom no-repeat;
 }
@@ -50,6 +51,7 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
   box-sizing: border-box;
   background: url("@/assets/images/bg02.png") no-repeat;
   background-size: cover;
+  position: relative;
 }
 
 .cats-title {
