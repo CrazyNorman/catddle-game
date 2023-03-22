@@ -78,6 +78,8 @@ const descriptions = ref([
 
 .copyright {
   color: #ffffff;
+  font-size: 12px;
+  white-space: nowrap;
   text-align: center;
   position: absolute;
   bottom: 2vw;

@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import postcssImport from 'postcss-import'
 import autoprefixer from 'autoprefixer'
-import pxtovw from 'postcss-px-to-viewport'
+import pxtovw from 'postcss-px-to-viewport-8-plugin'
 
 const load_pxtovw = pxtovw({
 	viewportWidth: 1920,
