@@ -42,6 +42,7 @@ const descriptions = ref([
 
   .description {
     color: #ffffff;
+    margin-top: 32px;
     font-size: 24px;
     text-align: center;
     font-family: HelveticaBold, Helvetica;;
