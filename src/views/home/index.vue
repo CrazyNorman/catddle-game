@@ -6,7 +6,7 @@ import useImage from '@/hooks/useImage.js'
 import { getImageUrl } from '@/utils/index.js'
 
 const cloud = useImage('bg_cloud', 4)
-const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg_ball'])
+const grass = useImage(['bg01', 'bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg_ball'])
 </script>
 
 <template>
@@ -42,7 +42,7 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
   position: relative;
   z-index: 2;
   height: 660px;
-  background-image: url("@/assets/images/bg01.png");
+  //background-image: url("@/assets/images/bg01.png");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: contain;
@@ -123,6 +123,7 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
     width: 299px;
     top: 89px;
     right: 255px;
+    z-index: -1;
   }
 
   .bg_cloud4 {
@@ -144,8 +145,15 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
   position: absolute;
   bottom: 33px;
 
+  .bg01 {
+    width: 100%;
+    position: absolute;
+    bottom: -33px;
+  }
+
   .bg_grass2 {
     width: 100%;
+    position: absolute;
   }
 
   .bg_grass1 {
