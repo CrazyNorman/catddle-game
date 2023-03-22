@@ -85,6 +85,7 @@ const descriptions = ref([
   bottom: 2vw;
   left: 50%;
   transform: translateX(-50%);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 820px) {

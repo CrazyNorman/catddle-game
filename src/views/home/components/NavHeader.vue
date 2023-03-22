@@ -10,6 +10,8 @@
              :key="item.url"
              :src="item.url"
              alt="catddle"
+             :class="{'nav-disable': item.url.includes('disable')}"
+             :title="item.url.includes('disable') ? '暂未开通' : ''"
              :data-normal="item.url"
              :data-hover="urls_hover[i].url"
              @click="goto(item.name)"
@@ -34,15 +36,15 @@ import NavMenu from '@/views/home/components/NavMenu.vue'
 const urls = useImage([
   'nav/nav_twitter',
   'nav/nav_medium',
-  'nav/nav_discord',
-  'nav/nav_instagram',
+  'nav/nav_disable_discord',
+  'nav/nav_disable_instagram',
   'nav/nav_button'
 ])
 const urls_hover = useImage([
   'nav/nav_hover_twitter',
   'nav/nav_hover_medium',
-  'nav/nav_hover_discord',
-  'nav/nav_hover_instagram',
+  'nav/nav_disable_discord',
+  'nav/nav_disable_instagram',
   'nav/nav_hover_button'
 ])
 
@@ -69,10 +71,22 @@ function showNavMenu () {
   padding: 6px 14vw;
   text-align: right;
 
+  .logo {
+    width: 60px;
+
+    img {
+      width: 100%;
+    }
+  }
   .nav-bar {
-    .nav-item {
+    .nav-item:not(:last-child) {
+      width: 60px;
       margin-right: 26px;
       object-fit: none;
+    }
+
+    .nav-disable {
+      cursor: not-allowed;
     }
   }
 

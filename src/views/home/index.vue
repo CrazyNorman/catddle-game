@@ -42,7 +42,11 @@ const grass = useImage(['bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg
   position: relative;
   z-index: 2;
   height: 660px;
-  background: url("@/assets/images/bg01.png") center bottom no-repeat;
+  background-image: url("@/assets/images/bg01.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+  background-color: #c7e9eb;
 }
 
 .cats-content {
