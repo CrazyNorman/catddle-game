@@ -1,6 +1,6 @@
 <template>
   <div class="cat-content">
-    <h2 class="cat-content-title">Features</h2>
+    <h2 class="cat-content-title">FEATURES</h2>
     <section class="description">
       You are going to adopt your first Web3 pet!
     </section>
@@ -35,16 +35,16 @@ const descriptions = ref([
 
   .cat-content-title {
     color: #ffffff;
-    font-size: 60px;
+    font-size: 66px;
     text-align: center;
     font-family: ModakRegular;
   }
 
   .description {
     color: #ffffff;
-    font-size: 16px;
+    font-size: 24px;
     text-align: center;
-    font-family: Helvetica-Regular;
+    font-family: HelveticaBold, Helvetica;;
   }
 
   .cat-photos {
@@ -54,6 +54,7 @@ const descriptions = ref([
       color: #ffffff;
       font-size: 28px;
       font-family: ModakRegular;
+      text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
     }
 
     .cat-photo {

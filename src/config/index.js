@@ -1,6 +1,6 @@
 window.CAT_CONFIG = {
   links: {
-    twitter: 'https://twitter.com/catddlenft',
-    medium: 'https://catddle.medium.com'
+    twitter: 'https://twitter.com/genki_cats',
+    medium: 'https://medium.com/@genkicats'
   }
 }
