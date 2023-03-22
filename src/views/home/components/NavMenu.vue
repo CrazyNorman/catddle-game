@@ -24,8 +24,8 @@ const emits = defineEmits(['expand'])
 const nav_icons = useImage([
   'mobile/nav_twitter',
   'mobile/nav_medium',
-  'mobile/nav_discord',
-  'mobile/nav_instagram'
+  'mobile/nav_disable_discord',
+  'mobile/nav_disable_instagram'
 ])
 </script>
 
