@@ -54,13 +54,13 @@ const descriptions = ref([
 
     .cat-description {
       color: #ffffff;
-      font-size: 28px;
+      font-size: 32px;
       font-family: ModakRegular;
       text-shadow: 0px 4px 4px rgba(0,0,0,0.25);
     }
 
     .cat-photo {
-      width: 338px;
+      width: 370px;
       margin-right: 33px;
       transition: .4s all ease;
 
@@ -81,7 +81,7 @@ const descriptions = ref([
 
 .copyright {
   color: #ffffff;
-  font-size: 12px;
+  font-size: 16px;
   white-space: nowrap;
   text-align: center;
   position: absolute;
