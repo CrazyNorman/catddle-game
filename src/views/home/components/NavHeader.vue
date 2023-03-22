@@ -70,6 +70,8 @@ function showNavMenu () {
   height: 55px;
   padding: 6px 14vw;
   text-align: right;
+  position: relative;
+  z-index: 2;
 
   .logo {
     width: 60px;

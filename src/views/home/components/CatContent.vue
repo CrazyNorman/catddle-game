@@ -38,6 +38,7 @@ const descriptions = ref([
     font-size: 66px;
     text-align: center;
     font-family: ModakRegular;
+    text-shadow: 0 4px 4px rgba(0,0,0,0.25);
   }
 
   .description {
