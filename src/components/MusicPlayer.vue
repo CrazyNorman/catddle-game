@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { isMobile } from '@/utils/index.js'
 import musicUrl from '@/assets/music/genki_main_theme.mp3'
 
@@ -24,6 +24,8 @@ function play () {
     isPlaying.value = false
   }
 }
+
+onMounted(() => document.addEventListener('click', play, { once: true }))
 </script>
 
 <style lang="scss" scoped>
