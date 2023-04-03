@@ -18,6 +18,7 @@
           v-model:value="email"
           :input-props="{ type: 'email' }"
           placeholder="email"
+          @keyup.enter="access"
       />
       <div v-if="isAccess" class="success-text" style="text-align: center">
         <p>Thank you for joining our Early Access to the game!</p>
