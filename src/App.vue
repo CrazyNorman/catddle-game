@@ -1,8 +1,12 @@
 <template>
-	<div class="app">
+	<n-message-provider>
 		<router-view />
-	</div>
+  </n-message-provider>
 </template>
+
+<script setup>
+import { NMessageProvider } from 'naive-ui'
+</script>
 
 <style>
 @import "assets/font/index.css";

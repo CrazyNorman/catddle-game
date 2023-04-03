@@ -10,3 +10,26 @@ export const goto = name => {
     if (name.includes(key)) window.open(CAT_CONFIG.links[key])
   })
 }
+
+export const getMetaMaskInfo = async (message) => {
+  try {
+    const provider = await detectEthereumProvider()
+    if (!provider) {
+      message.error("MetaMask not installed")
+      return
+    }
+    const accounts = await provider.request({
+      method: "eth_requestAccounts",
+    });
+
+    const network = await provider.request({ method: "eth_chainId" });
+    const chainId = parseInt(network);
+
+    return {
+      address: network,
+      chainId
+    }
+  } catch (e) {
+    // console.log(e)
+  }
+}

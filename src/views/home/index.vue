@@ -2,11 +2,19 @@
 import NavHeader from "@/views/home/components/NavHeader.vue"
 import CatContent from "@/views/home/components/CatContent.vue"
 import MusicPlayer from '@/components/MusicPlayer.vue'
+import CDialog from '@/components/Dialog.vue'
 import useImage from '@/hooks/useImage.js'
 import { getImageUrl } from '@/utils/index.js'
+import { ref } from 'vue'
 
 const cloud = useImage('bg_cloud', 4)
 const grass = useImage(['bg01', 'bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg_ball'])
+
+const visible = ref(false)
+
+function showEmailDialog () {
+  visible.value = true
+}
 </script>
 
 <template>
@@ -28,12 +36,13 @@ const grass = useImage(['bg01', 'bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailb
           <img :src="getImageUrl('bg_cat.png')" alt="cat" />
         </div>
       </div>
-      <button class="access-btn">Early Access</button>
+      <button class="access-btn" @click="showEmailDialog">Early Access</button>
     </div>
     <main class="cats-content">
       <cat-content />
     </main>
     <music-player />
+    <c-dialog v-model="visible" />
   </div>
 </template>
 

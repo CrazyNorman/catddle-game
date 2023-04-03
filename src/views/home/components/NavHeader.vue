@@ -14,7 +14,7 @@
              :title="item.url.includes('disable') ? '暂未开通' : ''"
              :data-normal="item.url"
              :data-hover="urls_hover[i].url"
-             @click="goto(item.name)"
+             @click="handleClick(item.name)"
              @mouseover.stop="hoverNav"
              @mouseleave.stop="leaveNav"
         />
@@ -29,9 +29,12 @@
 
 <script setup>
 import { ref } from "vue";
-import { getImageUrl, goto } from "@/utils";
+import { useMessage } from 'naive-ui'
+import { getImageUrl, goto, getMetaMaskInfo } from "@/utils";
 import useImage from '@/hooks/useImage.js'
 import NavMenu from '@/views/home/components/NavMenu.vue'
+
+const message = useMessage()
 
 const urls = useImage([
   'nav/nav_twitter',
@@ -57,11 +60,18 @@ function leaveNav (e) {
 }
 
 const isShow = ref(false)
-
 function showNavMenu () {
   isShow.value = !isShow.value
-  if (isShow.value) document.documentElement.style.overflowY = 'hidden'
-  else document.documentElement.style.overflowY = 'scroll'
+  document.documentElement.style.overflowY = isShow.value ? 'hidden' : 'scroll'
+}
+
+async function handleClick (name) {
+  if (name.includes('nav_button')) {
+    const res = await getMetaMaskInfo(message)
+    sessionStorage.setItem('metaMask', JSON.stringify(res))
+  } else {
+    goto(name)
+  }
 }
 </script>
 
