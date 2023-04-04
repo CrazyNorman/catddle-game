@@ -14,10 +14,11 @@
              :title="item.url.includes('disable') ? '暂未开通' : ''"
              :data-normal="item.url"
              :data-hover="urls_hover[i].url"
-             @click="handleClick(item.name)"
+             @click="goto(item.name)"
              @mouseover.stop="hoverNav"
              @mouseleave.stop="leaveNav"
         />
+        <div class="connect" @click="connect" :title="connectText">{{connectText}}</div>
       </div>
     </div>
     <div class="nav-bar-mobile">
@@ -41,14 +42,14 @@ const urls = useImage([
   'nav/nav_medium',
   'nav/nav_disable_discord',
   'nav/nav_disable_instagram',
-  'nav/nav_button'
+  // 'nav/nav_button'
 ])
 const urls_hover = useImage([
   'nav/nav_hover_twitter',
   'nav/nav_hover_medium',
   'nav/nav_disable_discord',
   'nav/nav_disable_instagram',
-  'nav/nav_hover_button'
+  // 'nav/nav_hover_button'
 ])
 
 function hoverNav (e) {
@@ -65,12 +66,15 @@ function showNavMenu () {
   document.documentElement.style.overflowY = isShow.value ? 'hidden' : 'scroll'
 }
 
-async function handleClick (name) {
-  if (name.includes('nav_button')) {
-    const res = await getMetaMaskInfo(message)
-    sessionStorage.setItem('metaMask', JSON.stringify(res))
-  } else {
-    goto(name)
+const connectText = ref('Connect')
+async function connect () {
+  const res = await getMetaMaskInfo(message)
+  if (res?.account) {
+    connectText.value = res.account
+    sessionStorage.setItem('metaMask', JSON.stringify({
+      address: res.address,
+      chainId: res.chainId
+    }))
   }
 }
 </script>
@@ -91,7 +95,7 @@ async function handleClick (name) {
     }
   }
   .nav-bar {
-    .nav-item:not(:last-child) {
+    .nav-item {
       width: 60px;
       margin-right: 26px;
       object-fit: none;
@@ -99,6 +103,28 @@ async function handleClick (name) {
 
     .nav-disable {
       cursor: not-allowed;
+    }
+
+    .connect {
+      width: 86px;
+      color: #67842B;
+      text-align: center;
+      font-size: 16px;
+      background: #ffffff;
+      outline: none;
+      border: none;
+      cursor: default;
+      padding: 0 12px;
+      border-radius: 6px;
+      font-family: HelveticaBold;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &:hover {
+        color: #ffffff;
+        background: #67842B;
+        transition: all .3s ease-in-out;
+      }
     }
   }
 

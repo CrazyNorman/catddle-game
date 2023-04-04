@@ -11,12 +11,13 @@
         role="dialog"
         aria-modal="true"
     >
-      <n-input
+      <n-auto-complete
           v-if="!isAccess"
           round
           size="large"
           v-model:value="email"
-          :input-props="{ type: 'email' }"
+          :options="options"
+          :input-props="{ autocomplete: 'disable' }"
           placeholder="email"
           @keyup.enter="access"
       />
@@ -30,7 +31,6 @@
           <n-button
               strong
               secondary
-              round
               type="success"
               :loading="loading"
               @click="access">
@@ -43,8 +43,8 @@
 </template>
 
 <script setup>
-import { NModal, NCard, NInput, NButton, useMessage } from 'naive-ui'
-import { ref, watch } from 'vue'
+import { NModal, NCard, NInput, NAutoComplete, NButton, useMessage } from 'naive-ui'
+import { computed, ref, watch } from 'vue'
 import { applyInvitation } from '@/service/index.js'
 
 const props = defineProps({
@@ -58,7 +58,7 @@ watch(isShow, val => emit('update:modelValue', val))
 watch(() => props.modelValue, val => isShow.value = val)
 
 const bodyStyle = { width: '500px' }
-const email = ref(null)
+const email = ref('')
 const loading = ref(false)
 const isAccess = ref(false)
 async function access () {
@@ -84,8 +84,18 @@ async function access () {
   loading.value = false
 }
 
+const options = computed(() => {
+  return ['@gmail.com', '@163.com', '@qq.com'].map((suffix) => {
+    const prefix = email.value.split('@')[0]
+    return {
+      label: prefix + suffix,
+      value: prefix + suffix
+    }
+  })
+})
+
 function shareTwitter () {
-  const tweetContent = "Just applied the early access of #Genki Cats. Claim your first #Web3 Pet for free on #Arbitrum! Come and join me!";
+  const tweetContent = "Just applied the early access of #Genki Cats. Claim your first #Web3 Pet for free on #Arbitrum! Come and join me!"
   const tweetUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(tweetContent)
   window.open(tweetUrl)
 }

@@ -120,7 +120,7 @@ const descriptions = ref([
 
     .mailbox {
       width: 48vw;
-      height: 200px;
+      height: 20vh;
       display: block;
       margin-top: 40px;
       overflow: hidden;

@@ -210,7 +210,7 @@ function showEmailDialog () {
 .access-btn {
   width: 280px;
   height: 60px;
-  line-height: 60px;
+  line-height: 55px;
   position: absolute;
   bottom: -228px;
   left: 50%;

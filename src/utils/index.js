@@ -19,13 +19,14 @@ export const getMetaMaskInfo = async (message) => {
       return
     }
     const accounts = await provider.request({
-      method: "eth_requestAccounts",
+      method: "eth_requestAccounts"
     });
 
-    const network = await provider.request({ method: "eth_chainId" });
-    const chainId = parseInt(network);
+    const network = await provider.request({ method: "eth_chainId" })
+    const chainId = parseInt(network)
 
     return {
+      account: accounts[0],
       address: network,
       chainId
     }
