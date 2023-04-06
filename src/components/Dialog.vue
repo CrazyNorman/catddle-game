@@ -33,7 +33,12 @@
       <div v-else class="success-text">
         <p class="title">Thank You For Joining Our Early Access To The Game!</p>
         <p class="content">We Will Notify You As We Roll Out Invites in Coming Weeks!</p>
-        <img class="icon-twitter" :src="getImageUrl('ic_twitter.png')" @click="shareTwitter" alt="twitter" />
+        <img
+            class="icon-twitter"
+            :src="twitterIcon"
+            @mouseover="hoverTwitter"
+            @mouseleave="leaveTwitter"
+            @click="shareTwitter" alt="twitter" />
         <p class="share" @click="shareTwitter">Share</p>
       </div>
     </div>
@@ -88,7 +93,7 @@ async function access () {
 }
 
 const options = computed(() => {
-  return ['@gmail.com', '@163.com', '@qq.com'].map((suffix) => {
+  return ['@gmail.com'].map((suffix) => {
     const prefix = email.value.split('@')[0]
     return {
       label: prefix + suffix,
@@ -101,6 +106,16 @@ function shareTwitter () {
   const tweetContent = "Just applied the early access of #Genki Cats. Claim your first #Web3 Pet for free on #Arbitrum! Come and join me!"
   const tweetUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(tweetContent)
   window.open(tweetUrl)
+}
+
+const twitterIcon = ref(getImageUrl('ic_twitter.png'))
+
+function hoverTwitter () {
+  twitterIcon.value = getImageUrl('ic_twitter_hover.png')
+}
+
+function leaveTwitter () {
+  twitterIcon.value = getImageUrl('ic_twitter.png')
 }
 </script>
 
@@ -157,6 +172,7 @@ function shareTwitter () {
       margin-bottom: 33px;
 
       :deep(.n-input) {
+        font-size: 17px;
         border-radius: 12px;
       }
     }
@@ -175,6 +191,7 @@ function shareTwitter () {
     background: #67842b;
     border-radius: 20px;
     transition: all .3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 5px 15px;
 
     &:hover {
       background: #8ab139;
@@ -185,6 +202,7 @@ function shareTwitter () {
     text-align: center;
     padding: 0 51px;
     margin-top: -5px;
+    background: url("@/assets/images/cat-bg.png") right -130px no-repeat;
 
     p {
       margin-bottom: 7px;
@@ -193,7 +211,7 @@ function shareTwitter () {
     .title {
       font-size: 20px;
       line-height: 23px;
-      font-family: Helvetica-Bold;
+      font-family: HelveticaBold;
       font-weight: bold;
       color: #67842B;
     }
@@ -202,7 +220,7 @@ function shareTwitter () {
       padding: 0 50px;
       font-size: 14px;
       line-height: 16px;
-      font-family: Helvetica-Regular;
+      font-family: HelveticaRegular;
       font-weight: 400;
       color: #868686;
     }
@@ -215,10 +233,14 @@ function shareTwitter () {
       width: 100px;
       cursor: pointer;
       font-size: 16px;
-      font-family: Helvetica-Bold;
+      font-family: HelveticaRegular;
       font-weight: bold;
       color: #67842B;
-      margin: -5px auto 0;
+      margin: -15px auto 0;
+
+      &:hover {
+        color: #8ab139;
+      }
     }
   }
 }
@@ -279,7 +301,7 @@ function shareTwitter () {
       }
 
       .share {
-        font-size: 1.1vw;
+        font-size: 2.6vw;
         line-height: 2vw;
         margin: -3vw auto 0;
       }
