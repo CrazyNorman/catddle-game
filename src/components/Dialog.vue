@@ -2,15 +2,15 @@
   <n-modal
       :bordered="false"
       v-model:show="isShow"
-      style="width: 500px;height: 300px;background: #ffffff;border-radius: 16px"
+      style=""
   >
     <div class="n-modal-main">
       <div class="modal-header">
-        <img v-if="!isAccess" class="email-img" :src="getImageUrl('email.png')" alt="email" />
+        <img v-if="isAccess" class="email-img" :src="getImageUrl('email.png')" alt="email" />
         <img v-else class="email-img" :src="getImageUrl('succeed.png')" alt="succeed" />
         <img class="close-img" :src="getImageUrl('close.png')" @click="isShow=false" alt="close" />
       </div>
-      <div v-if="!isAccess" class="email-input">
+      <div v-if="isAccess" class="email-input">
         <n-auto-complete
             round
             size="large"
@@ -105,6 +105,13 @@ function shareTwitter () {
 </script>
 
 <style lang="scss" scoped>
+.n-modal {
+  width: 500px;
+  height: 300px;
+  background: #ffffff;
+  border-radius: 16px
+}
+
 .n-modal-main {
   .modal-header {
     height: 114px;
@@ -217,9 +224,66 @@ function shareTwitter () {
 }
 
 @media (max-width: 820px) {
-  .apply-btn {
-    width: 29.3vw;
-    height: 6vw;
+  .n-modal {
+    width: 73.3vw;
+    height: 55.7vw;
+    background: #ffffff;
+    border-radius: 16px;
+
+    .modal-header {
+      height: 15.2vw;
+
+      .email-img {
+        width: 10vw;
+        top: 3vw;
+      }
+
+      .close-img {
+        top: 2.4vw;
+        right: 2.6vw;
+      }
+
+      &::after {
+        top: 15.2vw;
+        border: 3vw solid transparent;
+        border-top-color: #CED995;
+      }
+    }
+  }
+  .n-modal-main {
+    .email-input {
+      .n-auto-complete {
+        width: calc(100% - 9.3vw);
+        margin-bottom: 1.02vw;
+      }
+    }
+
+    .n-button {
+      width: 29.3vw;
+      height: 8.13vw;
+      font-size: 3.4vw;
+    }
+
+    .success-text {
+      padding: 0 4.06vw;
+
+      .title {
+        font-size: 3.6vw;
+        line-height: 3.8vw;
+      }
+
+      .content {
+        padding: 0 7.7vw;
+        font-size: 2.6vw;
+        line-height: 3vw;
+      }
+
+      .share {
+        font-size: 1.1vw;
+        line-height: 2vw;
+        margin: -3vw auto 0;
+      }
+    }
   }
 }
 </style>
