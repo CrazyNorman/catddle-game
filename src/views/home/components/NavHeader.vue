@@ -23,7 +23,7 @@
     </div>
     <div class="nav-bar-mobile">
       <img :src="getImageUrl('mobile/expand.png')" alt="expand" @click="showNavMenu" />
-      <nav-menu :visible="isShow" @expand="showNavMenu" />
+      <nav-menu :visible="isShow" @expand="showNavMenu" @connect="connect" />
     </div>
   </header>
 </template>

@@ -8,7 +8,7 @@
              :src="icon.url"
              @click="goto(icon.name)"
              alt="catddle" />
-        <img class="login" :src="getImageUrl('mobile/login.png')" alt="Sign in" />
+        <div class="connect" @click.stop="connect" :title="connectText">{{connectText}}</div>
       </div>
     </div>
   </Teleport>
@@ -16,10 +16,13 @@
 
 <script setup>
 import useImage from '@/hooks/useImage.js'
-import { getImageUrl, goto } from '@/utils/index.js'
+import { getMetaMaskInfo, goto } from '@/utils/index.js'
+import { useMessage } from 'naive-ui'
+import { ref } from 'vue'
 
 defineProps(['visible'])
-const emits = defineEmits(['expand'])
+const emits = defineEmits(['expand', 'connect'])
+const message = useMessage()
 
 const nav_icons = useImage([
   'mobile/nav_twitter',
@@ -27,6 +30,17 @@ const nav_icons = useImage([
   'mobile/nav_disable_discord',
   'mobile/nav_disable_instagram'
 ])
+const connectText = ref('Connect')
+async function connect () {
+  const res = await getMetaMaskInfo(message)
+  if (res?.account) {
+    connectText.value = res.account
+    sessionStorage.setItem('metaMask', JSON.stringify({
+      address: res.address,
+      chainId: res.chainId
+    }))
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -47,11 +61,35 @@ const nav_icons = useImage([
   }
   .nav-icon {
     width: 8%;
-    margin-bottom: 82px;
+    margin-bottom: 10.93vw;
   }
 
   .login {
     width: 40%;
+  }
+
+  .connect {
+    width: 35%;
+    height: 8vw;
+    line-height: 8vw;
+    color: #67842B;
+    text-align: center;
+    font-size: 16px;
+    background: #ffffff;
+    outline: none;
+    border: none;
+    cursor: default;
+    padding: 0 12px;
+    border-radius: 12px;
+    font-family: HelveticaBold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      color: #ffffff;
+      background: #67842B;
+      transition: all .3s ease-in-out;
+    }
   }
 }
 </style>
