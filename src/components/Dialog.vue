@@ -6,11 +6,11 @@
   >
     <div class="n-modal-main">
       <div class="modal-header">
-        <img v-if="isAccess" class="email-img" :src="getImageUrl('email.png')" alt="email" />
+        <img v-if="!isAccess" class="email-img" :src="getImageUrl('email.png')" alt="email" />
         <img v-else class="email-img" :src="getImageUrl('succeed.png')" alt="succeed" />
         <img class="close-img" :src="getImageUrl('close.png')" @click="isShow=false" alt="close" />
       </div>
-      <div v-if="isAccess" class="email-input">
+      <div v-if="!isAccess" class="email-input">
         <n-auto-complete
             round
             size="large"
