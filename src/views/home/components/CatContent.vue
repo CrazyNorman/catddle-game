@@ -134,5 +134,9 @@ const descriptions = ref([
       }
     }
   }
+
+  .copyright {
+    font-size: 3vw;
+  }
 }
 </style>
