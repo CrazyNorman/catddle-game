@@ -8,7 +8,7 @@ import pxtovw from 'postcss-px-to-viewport-8-plugin'
 const load_pxtovw = pxtovw({
 	viewportWidth: 1920,
 	viewportUnit: 'vw',
-	selectorBlackList: ['home', 'connect'],
+	selectorBlackList: ['home', 'connect', 'n-modal-main'],
 	include: /mobile/g,
 	exclude: undefined
 })

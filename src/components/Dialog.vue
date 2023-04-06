@@ -1,51 +1,50 @@
 <template>
   <n-modal
-      v-model:show="isShow"
-      preset="card" size="huge"
-      :style="bodyStyle"
       :bordered="false"
+      v-model:show="isShow"
+      style="width: 500px;height: 300px;background: #ffffff;border-radius: 16px"
   >
-    <n-card
-        :bordered="false"
-        size="huge"
-        role="dialog"
-        aria-modal="true"
-    >
-      <n-auto-complete
-          v-if="!isAccess"
-          round
-          size="large"
-          v-model:value="email"
-          :options="options"
-          :input-props="{ autocomplete: 'disable' }"
-          placeholder="email"
-          @keyup.enter="access"
-      />
-      <div v-if="isAccess" class="success-text" style="text-align: center">
-        <p>Thank you for joining our Early Access to the game!</p>
-        <p>We will notify you as we roll out invites in coming weeks!</p>
-        <n-button @click="shareTwitter">share to twitter</n-button>
+    <div class="n-modal-main">
+      <div class="modal-header">
+        <img v-if="!isAccess" class="email-img" :src="getImageUrl('email.png')" alt="email" />
+        <img v-else class="email-img" :src="getImageUrl('succeed.png')" alt="succeed" />
+        <img class="close-img" :src="getImageUrl('close.png')" @click="isShow=false" alt="close" />
       </div>
-      <template #footer>
-        <div v-if="!isAccess" style="text-align: center">
+      <div v-if="!isAccess" class="email-input">
+        <n-auto-complete
+            round
+            size="large"
+            v-model:value="email"
+            :options="options"
+            :input-props="{ autocomplete: 'disable' }"
+            placeholder="Email"
+            @keyup.enter="access"
+        />
+        <div style="text-align: center">
           <n-button
               strong
-              secondary
               type="success"
               :loading="loading"
               @click="access">
-            Access
+            Apply
           </n-button>
         </div>
-      </template>
-    </n-card>
+      </div>
+      <div v-else class="success-text">
+        <p class="title">Thank You For Joining Our Early Access To The Game!</p>
+        <p class="content">We Will Notify You As We Roll Out Invites in Coming Weeks!</p>
+        <img class="icon-twitter" :src="getImageUrl('ic_twitter.png')" @click="shareTwitter" alt="twitter" />
+        <p class="share" @click="shareTwitter">Share</p>
+      </div>
+    </div>
   </n-modal>
 </template>
 
 <script setup>
-import { NModal, NCard, NInput, NAutoComplete, NButton, useMessage } from 'naive-ui'
+import { NModal, NAutoComplete, NButton, useMessage } from 'naive-ui'
 import { computed, ref, watch } from 'vue'
 import { applyInvitation } from '@/service/index.js'
+import { getImageUrl } from '@/utils/index.js'
 
 const props = defineProps({
   modelValue: Boolean
@@ -57,11 +56,15 @@ const isShow = ref(props.modelValue)
 watch(isShow, val => emit('update:modelValue', val))
 watch(() => props.modelValue, val => isShow.value = val)
 
-const bodyStyle = { width: '500px' }
 const email = ref('')
 const loading = ref(false)
 const isAccess = ref(false)
+
 async function access () {
+  if (!email.value) {
+    message.error('email is empty!')
+    return
+  }
   let params
   const metaMaskInfo = sessionStorage.getItem('metaMask')
   loading.value = true
@@ -102,13 +105,121 @@ function shareTwitter () {
 </script>
 
 <style lang="scss" scoped>
-.success-text {
-  p {
-    white-space: nowrap;
+.n-modal-main {
+  .modal-header {
+    height: 114px;
+    background: #CED995;
+    margin-bottom: 28px;
+    border-radius: 16px 16px 0 0;
+
+    .email-img {
+      position: absolute;
+      top: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .close-img {
+      position: absolute;
+      top: 22px;
+      right: 26px;
+      cursor: pointer;
+    }
+
+    &::after {
+      width: 0;
+      content: '';
+      position: absolute;
+      top: 114px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 14px solid transparent;
+      border-top-color: #CED995;
+    }
+  }
+
+  .email-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .n-auto-complete {
+      text-align: center;
+      width: calc(100% - 80px);
+      margin-bottom: 33px;
+
+      :deep(.n-input) {
+        border-radius: 12px;
+      }
+    }
+  }
+
+  .n-button {
+    width: 220px;
+    height: 46px;
+    text-align: center;
+    cursor: default;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: bold;
+    font-family: Helvetica-Bold, Helvetica;
+    background: #67842b;
+    border-radius: 20px;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      background: #8ab139;
+    }
+  }
+
+  .success-text {
+    text-align: center;
+    padding: 0 51px;
+    margin-top: -5px;
+
+    p {
+      margin-bottom: 7px;
+    }
+
+    .title {
+      font-size: 20px;
+      line-height: 23px;
+      font-family: Helvetica-Bold;
+      font-weight: bold;
+      color: #67842B;
+    }
+
+    .content {
+      padding: 0 50px;
+      font-size: 14px;
+      line-height: 16px;
+      font-family: Helvetica-Regular;
+      font-weight: 400;
+      color: #868686;
+    }
+
+    .icon-twitter {
+      cursor: pointer;
+    }
+
+    .share {
+      width: 100px;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: Helvetica-Bold;
+      font-weight: bold;
+      color: #67842B;
+      margin: -5px auto 0;
+    }
   }
 }
-:deep(.n-card__content) {
-  display: flex;
-  justify-content: center;
+
+@media (max-width: 820px) {
+  .apply-btn {
+    width: 29.3vw;
+    height: 6vw;
+  }
 }
 </style>
