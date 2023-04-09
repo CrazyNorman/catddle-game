@@ -87,9 +87,9 @@ defineExpose({
 
 onMounted(() => {
   window.ethereum.on("accountsChanged", async (accounts) => {
-    connectText.value = accounts[0]
+    connectText.value = accounts[0] || 'Connect'
     sessionStorage.setItem('metaMask', JSON.stringify({
-      address: accounts[0],
+      address: connectText.value,
       chainId: metaMaskInfo.value.chainId
     }))
   })
