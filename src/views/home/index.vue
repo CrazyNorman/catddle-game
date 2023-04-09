@@ -14,7 +14,9 @@ const navHeaderRef = ref(null)
 const visible = ref(false)
 
 async function showEmailDialog () {
-  await navHeaderRef.value.connect()
+  if (window.ethereum) {
+    await navHeaderRef.value.connect()
+  }
   visible.value = true
 }
 </script>
