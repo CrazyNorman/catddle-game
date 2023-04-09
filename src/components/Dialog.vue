@@ -6,11 +6,11 @@
   >
     <div class="n-modal-main">
       <div class="modal-header">
-        <img v-if="!isAccess" class="email-img" :src="getImageUrl('email.png')" alt="email" />
+        <img v-if="isAccess" class="email-img" :src="getImageUrl('email.png')" alt="email" />
         <img v-else class="email-img" :src="getImageUrl('succeed.png')" alt="succeed" />
         <img class="close-img" :src="getImageUrl('close.png')" @click="isShow=false" alt="close" />
       </div>
-      <div v-if="!isAccess" class="email-input">
+      <div v-if="isAccess" class="email-input">
         <n-auto-complete
             round
             size="large"
@@ -31,8 +31,8 @@
         </div>
       </div>
       <div v-else class="success-text">
-        <p class="title">Thank You For Joining Our Early Access To The Game!</p>
-        <p class="content">We Will Notify You As We Roll Out Invites in Coming Weeks!</p>
+        <p class="title">Thank You For Joining Our Early Access!</p>
+        <p class="content">We Will Notify You in Coming Weeks!</p>
         <img
             class="icon-twitter"
             :src="twitterIcon"
@@ -124,14 +124,16 @@ function leaveTwitter () {
   width: 500px;
   height: 300px;
   background: #ffffff;
-  border-radius: 16px
+  border-radius: 16px;
 }
 
 .n-modal-main {
+  display: flex;
+  flex-direction: column;
   .modal-header {
     height: 114px;
     background: #CED995;
-    margin-bottom: 28px;
+    margin-bottom: 45px;
     border-radius: 16px 16px 0 0;
 
     .email-img {
@@ -199,13 +201,14 @@ function leaveTwitter () {
   }
 
   .success-text {
+    flex: 1;
     text-align: center;
     padding: 0 51px;
     margin-top: -5px;
     background: url("@/assets/images/cat-bg.png") right -130px no-repeat;
 
     p {
-      margin-bottom: 7px;
+      margin-bottom: 19px;
     }
 
     .title {
