@@ -2,7 +2,6 @@
   <n-modal
       :bordered="false"
       v-model:show="isShow"
-      style=""
   >
     <div class="n-modal-main">
       <div class="modal-header">
@@ -11,7 +10,7 @@
         <img class="close-img" :src="getImageUrl('close.png')" @click="isShow=false" alt="close" />
       </div>
       <div v-if="!isAccess" class="email-input">
-        <n-auto-complete
+        <n-input
             round
             size="large"
             v-model:value="email"
@@ -46,7 +45,7 @@
 </template>
 
 <script setup>
-import { NModal, NAutoComplete, NButton, useMessage } from 'naive-ui'
+import { NModal, NInput, NButton, useMessage } from 'naive-ui'
 import { computed, ref, watch } from 'vue'
 import { applyInvitation } from '@/service/index.js'
 import { getImageUrl } from '@/utils/index.js'
@@ -93,7 +92,7 @@ async function access () {
 }
 
 const options = computed(() => {
-  return ['@gmail.com'].map((suffix) => {
+  return ['@gmail.com', 'yahoo.com'].map(suffix => {
     const prefix = email.value.split('@')[0]
     return {
       label: prefix + suffix,
@@ -168,15 +167,16 @@ function leaveTwitter () {
     justify-content: center;
     align-items: center;
 
-    .n-auto-complete {
+    .n-input {
       text-align: center;
       width: calc(100% - 80px);
       margin-bottom: 33px;
+      font-size: 17px;
+      border-radius: 12px;
 
-      :deep(.n-input) {
-        font-size: 17px;
-        border-radius: 12px;
-      }
+      //:deep(.n-input) {
+      //
+      //}
     }
   }
 
@@ -278,7 +278,7 @@ function leaveTwitter () {
   }
   .n-modal-main {
     .email-input {
-      .n-auto-complete {
+      .n-input {
         width: calc(100% - 9.3vw);
         margin-bottom: 1.02vw;
       }

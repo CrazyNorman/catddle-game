@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { useMessage } from 'naive-ui'
 import { getImageUrl, goto, getMetaMaskInfo } from "@/utils";
 import useImage from '@/hooks/useImage.js'
@@ -67,8 +67,10 @@ function showNavMenu () {
 }
 
 const connectText = ref('Connect')
+const metaMaskInfo = ref({})
 async function connect () {
   const res = await getMetaMaskInfo(message)
+  metaMaskInfo.value = res
   if (res?.address) {
     connectText.value = res.address
     sessionStorage.setItem('metaMask', JSON.stringify({
@@ -81,6 +83,21 @@ async function connect () {
 defineExpose({
   connectText,
   connect
+})
+
+onMounted(() => {
+  window.ethereum.on("accountsChanged", async (accounts) => {
+    connectText.value = accounts[0]
+    sessionStorage.setItem('metaMask', JSON.stringify({
+      address: accounts[0],
+      chainId: metaMaskInfo.value.chainId
+    }))
+  })
+
+  window.ethereum.on("disconnect", (code, reason) => {
+    connectText.value = 'Connect'
+    sessionStorage.clear()
+  })
 })
 </script>
 
