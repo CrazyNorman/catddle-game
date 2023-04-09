@@ -103,7 +103,7 @@ const options = computed(() => {
 })
 
 function shareTwitter () {
-  const tweetContent = "Just applied the early access of #Genki Cats. Claim your first #Web3 Pet for free on #Arbitrum! Come and join me!"
+  const tweetContent = "Just applied the early access of #GenkiCats. Claim your first #Web3 Pet for free on #Arbitrum! Come and join me!"
   const tweetUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(tweetContent)
   window.open(tweetUrl)
 }
