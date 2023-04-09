@@ -214,7 +214,7 @@ async function showEmailDialog () {
 .access-btn {
   width: 280px;
   height: 60px;
-  line-height: 55px;
+  line-height: 47px;
   position: absolute;
   bottom: -228px;
   left: 50%;
