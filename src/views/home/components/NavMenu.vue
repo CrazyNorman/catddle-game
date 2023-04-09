@@ -33,8 +33,8 @@ const nav_icons = useImage([
 const connectText = ref('Connect')
 async function connect () {
   const res = await getMetaMaskInfo(message)
-  if (res?.account) {
-    connectText.value = res.account
+  if (res?.address) {
+    connectText.value = res.address
     sessionStorage.setItem('metaMask', JSON.stringify({
       address: res.address,
       chainId: res.chainId

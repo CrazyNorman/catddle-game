@@ -26,8 +26,7 @@ export const getMetaMaskInfo = async (message) => {
     const chainId = parseInt(network)
 
     return {
-      account: accounts[0],
-      address: network,
+      address: accounts[0],
       chainId
     }
   } catch (e) {

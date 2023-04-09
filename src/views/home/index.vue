@@ -4,15 +4,17 @@ import CatContent from "@/views/home/components/CatContent.vue"
 import MusicPlayer from '@/components/MusicPlayer.vue'
 import CDialog from '@/components/Dialog.vue'
 import useImage from '@/hooks/useImage.js'
-import { getImageUrl } from '@/utils/index.js'
+import { getImageUrl, getMetaMaskInfo } from '@/utils/index.js'
 import { ref } from 'vue'
 
 const cloud = useImage('bg_cloud', 4)
 const grass = useImage(['bg01', 'bg_grass1', 'bg_grass2', 'bg_grass3', 'bg_mailbox', 'bg_ball'])
 
+const navHeaderRef = ref(null)
 const visible = ref(false)
 
-function showEmailDialog () {
+async function showEmailDialog () {
+  await navHeaderRef.value.connect()
   visible.value = true
 }
 </script>
@@ -20,7 +22,7 @@ function showEmailDialog () {
 <template>
   <div class="home">
     <div class="cats-top">
-      <nav-header />
+      <nav-header ref="navHeaderRef" />
       <h2 class="cats-title">GENKI CATS</h2>
       <div class="cloud-box">
         <div class="cloud">
