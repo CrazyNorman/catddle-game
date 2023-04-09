@@ -257,6 +257,7 @@ function leaveTwitter () {
 
     .modal-header {
       height: 15.2vw;
+      margin-bottom: 10vw;
 
       .email-img {
         width: 10vw;
@@ -292,6 +293,10 @@ function leaveTwitter () {
     .success-text {
       padding: 0 4.06vw;
 
+      p {
+        margin-bottom: 1vw;
+      }
+
       .title {
         font-size: 3.6vw;
         line-height: 3.8vw;
@@ -306,7 +311,7 @@ function leaveTwitter () {
       .share {
         font-size: 2.6vw;
         line-height: 2vw;
-        margin: -3vw auto 0;
+        margin: -4vw auto 0;
       }
     }
   }
