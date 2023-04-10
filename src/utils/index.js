@@ -7,7 +7,14 @@ export const isMobile = () => {
 
 export const goto = name => {
   Object.keys(CAT_CONFIG.links).forEach(key => {
-    if (name.includes(key)) window.open(CAT_CONFIG.links[key])
+    if (name.includes(key)) {
+      let a = document.createElement('a')
+      a.setAttribute('href', CAT_CONFIG.links[key])
+      a.setAttribute('target', '_blank')
+      document.body.appendChild(a)
+      a.click()
+      a.remove()
+    }
   })
 }
 
