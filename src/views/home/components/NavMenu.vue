@@ -28,7 +28,8 @@ const nav_icons = useImage([
   'mobile/nav_twitter',
   'mobile/nav_medium',
   'mobile/nav_disable_discord',
-  'mobile/nav_disable_instagram'
+  'mobile/nav_disable_instagram',
+  'nav/nav_docs'
 ])
 const connectText = ref('Connect')
 async function connect () {
