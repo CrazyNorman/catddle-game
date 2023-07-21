@@ -42,6 +42,7 @@ const urls = useImage([
   'nav/nav_medium',
   'nav/nav_disable_discord',
   'nav/nav_disable_instagram',
+  'nav/nav_docs'
   // 'nav/nav_button'
 ])
 const urls_hover = useImage([
@@ -49,6 +50,7 @@ const urls_hover = useImage([
   'nav/nav_hover_medium',
   'nav/nav_disable_discord',
   'nav/nav_disable_instagram',
+  'nav/nav_hover_docs'
   // 'nav/nav_hover_button'
 ])
 
@@ -86,7 +88,7 @@ defineExpose({
 })
 
 onMounted(() => {
-  window.ethereum.on("accountsChanged", async (accounts) => {
+  window.ethereum?.on("accountsChanged", async (accounts) => {
     connectText.value = accounts[0] || 'Connect'
     sessionStorage.setItem('metaMask', JSON.stringify({
       address: connectText.value,
@@ -94,7 +96,7 @@ onMounted(() => {
     }))
   })
 
-  window.ethereum.on("disconnect", (code, reason) => {
+  window.ethereum?.on("disconnect", (code, reason) => {
     connectText.value = 'Connect'
     sessionStorage.clear()
   })
