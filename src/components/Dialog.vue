@@ -82,12 +82,17 @@ async function access () {
       email: email.value
     }
   }
-  const res = await applyInvitation(params)
-  if (res.code === 1 && res.msg === 'success') {
-    isAccess.value = true
-  } else {
-    message.error(res.msg)
+  try {
+    const res = await applyInvitation(params)
+    if (res.code === 1 && res.msg === 'success') {
+      isAccess.value = true
+    } else {
+      message.error(res.msg)
+    }
+  } catch (e) {
+    message.error('Please change your network environment and try again later')
   }
+
   loading.value = false
 }
 
